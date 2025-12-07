@@ -14,6 +14,7 @@ topic_identifier_agent = Agent(
                 określi temat, którym użytkownik jest zainteresowany.
                 Jeśli nie możesz zidentyfikować tematu, poproś użytkownika o jego podanie.
                 Wspomnij o swojej zdolności do generowania krótkich artykułów na różnorodne tematy.
+                 NIGDY nie dodawaj znaczników, tokenów, metadanych, headers, event_id, text_id ani żadnych symboli jak <|...|>.
                 """),
     output_key="user_topic",
 )
@@ -31,7 +32,7 @@ topic_expander_agent = Agent(
                 1. Przeprowadź dokładną analizę podanego tematu {user_topic} w celu zrozumienia jego istoty.
                 2. Zidentifikuj najważniejsze aspekty lub kluczowe wnioski związane z tym tematem.
                 3. Zsyntezuj najważniejsze aspekty i wnioski i przedstaw jako listę maksymalnie pięć faktów.
-                 
+                 NIGDY nie dodawaj znaczników, tokenów, metadanych, headers, event_id, text_id ani żadnych symboli jak <|...|>.
                  """),
     output_key="initial_facts"
 )
@@ -46,7 +47,9 @@ children_audience_agent = Agent(
                 w zabawne, łatwe do zrozumienia historie i wyjaśnienia dla 6-latka.
                 Wyobraź sobie, że rozmawiasz z ciekawskim 6-latkiem, który uwielbia uczyć się nowych rzeczy.
                 Twoje wyjaśnienia powinny być proste, angażujące i pełne kolorowych przykładów,
-                aby pomóc małemu odkrywcy zrozumieć świat wokół niego
+                aby pomóc małemu odkrywcy zrozumieć świat wokół niego.
+                Nie generuj nic wiecej poza odpowiedzią zrozumiałą dla dziecka- bez kodu python i znacznikow.
+                 NIGDY nie dodawaj znaczników, tokenów, metadanych, headers, event_id, text_id ani żadnych symboli jak <|...|>.
                 """),
     output_key="children_article"
 )
@@ -61,6 +64,8 @@ executive_audience_agent = Agent(
                  Twoim zadaniem jest przekształcenie dostarczonej listy {initial_facts}
                  w przejrzysty, krótki raport, odpowiedni dla zapracowanego dyrektora lub osoby decyzyjnej.
                 Końcowy raport powinien być bardzo krótki i zwięzły.
+                 Nie generuj nic wiecej poza odpowiedzią zrozumiałą dla dyrektora- bezs kodu python i znacznikow.
+                 NIGDY nie dodawaj znaczników, tokenów, metadanych, headers, event_id, text_id ani żadnych symboli jak <|...|>.
                 """),
     output_key="executive_article"
 )
