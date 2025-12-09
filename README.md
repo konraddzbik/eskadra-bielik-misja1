@@ -45,7 +45,7 @@ Przykładowy kod źródłowy pozwalający na:
 >W terminalu `Cloud Shell` dostępny jest edytor po wybraniu opcji *Open Editor*
 
    ```bash
-   BIELIK_EVENT_ID="<IDENTYFIKATOR_WARSTATOW>"
+   BIELIK_EVENT_ID="bielik-dw-03"
    GOOGLE_CLOUD_LOCATION="europe-west1"  # Europe (Belgium)
    BIELIK_SERVICE_NAME="ollama-bielik-v3"
    BIELIK_MODEL_NAME="SpeakLeash/bielik-4.5b-v3.0-instruct:Q8_0"
